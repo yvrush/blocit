@@ -23,8 +23,8 @@ end
 
 puts "#{Post.count}"
 puts "#{Comment.count}"
-Post.find_or_create_by(title:  "Best title ever",  body: "Its an Ok body")
-Comment.find_or_create_by(body: "Good body", post: Post.find(51))
+p = Post.find_or_create_by(title:  "Best title ever",  body: "Its an Ok body")
+Comment.find_or_create_by(body: "Good body", post: p)
 puts "#{Post.count}"
 puts "#{Comment.count}"
 puts "Seed finished"
