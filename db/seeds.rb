@@ -12,21 +12,25 @@ end
 posts = Post.all
 
 # Create Comments
-# #3
 100.times do
+
   Comment.create!(
-# #4
     post: posts.sample,
     body: RandomData.random_paragraph
   )
 end
 
-puts "#{Post.count}"
-puts "#{Comment.count}"
-p = Post.find_or_create_by(title:  "Best title ever",  body: "Its an Ok body")
-Comment.find_or_create_by(body: "Good body", post: p)
-puts "#{Post.count}"
-puts "#{Comment.count}"
+# Create Questions
+100.times do
+  Question.create!(
+
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph,
+    resolved: false
+  )
+end
+
 puts "Seed finished"
-puts "#{Post.count} posts created"
-puts "#{Comment.count} comments created"
+puts "#{Post.count} Posts created"
+puts "#{Comment.count} Comments created"
+puts "#{Question.count} Questions created"
