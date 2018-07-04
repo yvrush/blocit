@@ -8,7 +8,7 @@ class SponsoredPostsController < ApplicationController
     def create
     @sponsored_post = SponsoredPost.new
     @sponsored_post.title = params[:post][:title]
-    @sponsored_post.title = params[:post][:price]
+    @sponsored_post.price = params[:post][:price]
     @sponsored_post.body = params[:post][:body]
     @topic = Topic.find(params[:topic_id])
     @sponsored_post.topic = @topic
