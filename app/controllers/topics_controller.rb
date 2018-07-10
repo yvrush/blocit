@@ -5,7 +5,9 @@ class TopicsController < ApplicationController
   end
 
   def show
-  @topic = Topic.find(params[:id])
+    @topic = Topic.joins(:sponsored_posts, :posts).find(params[:id])
+    @posts = @topic.posts.joins(:comments)
+    @sponsored_posts = @topic.sponsored_posts
   end
 
   def new
