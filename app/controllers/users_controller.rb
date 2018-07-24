@@ -19,4 +19,14 @@ class UsersController < ApplicationController
       end
   end
 
+  def confirm
+    #raise params.inspect
+  end
+
+  def user_params
+  params.require(:user).permit(:email, :name, :password, :password_confirmation)
+end
+
+helper_method :user_params
+
 end
